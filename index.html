@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin Kierstein - LIVE at The Bank Street Cafe - February 8, 1991</title>
+<meta name="description" content="Kevin Kierstein, live at The Bank Street Cafe, February 8, 1991.">
+<meta property="og:image" content="cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#111; --muted:#6b6b6b; --line:#e6e6e6; --bg:#fff; --hover:#f6f6f6; --accent:#111; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Manrope, -apple-system, Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  main { max-width:1100px; margin:0 auto; padding:56px 24px 140px; display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:56px; align-items:start; }
+  .cover { position:sticky; top:40px; }
+  .cover img { width:100%; height:auto; display:block; border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,.12); }
+  h1 { font-family:Poppins, Manrope, sans-serif; font-weight:600; font-size:clamp(1.6rem,3.2vw,2.4rem); line-height:1.15; margin:0 0 6px; }
+  .sub { color:var(--muted); font-size:1.05rem; margin:0 0 28px; }
+  .album { display:flex; gap:12px; align-items:center; margin-bottom:28px; flex-wrap:wrap; }
+  .btn { font:inherit; font-weight:600; border:1px solid var(--ink); background:var(--ink); color:#fff; padding:11px 20px; border-radius:999px; cursor:pointer; }
+  .btn.ghost { background:transparent; color:var(--ink); text-decoration:none; }
+  ol { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .track { display:grid; grid-template-columns:40px 1fr auto 32px; align-items:center; gap:12px; padding:12px 8px; border-bottom:1px solid var(--line); cursor:pointer; }
+  .track:hover { background:var(--hover); }
+  .play { width:32px; height:32px; border:0; background:none; font:inherit; color:var(--muted); cursor:pointer; padding:0; }
+  .track:hover .num, .track.active .num { display:none; }
+  .track:hover .play::before { content:"\25B6"; color:var(--ink); }
+  .track.active .play::before { content:"\275A\275A"; font-size:.7rem; letter-spacing:-2px; color:var(--ink); }
+  .track.active.paused .play::before { content:"\25B6"; font-size:1rem; letter-spacing:0; }
+  .meta { display:flex; flex-direction:column; min-width:0; }
+  .name { font-weight:500; }
+  .track.active .name { font-weight:600; }
+  .by { color:var(--muted); font-size:.88rem; }
+  .time { color:var(--muted); font-variant-numeric:tabular-nums; font-size:.9rem; }
+  .dl { color:var(--muted); text-decoration:none; text-align:center; font-size:1.1rem; }
+  .dl:hover { color:var(--ink); }
+  .bar { position:fixed; left:0; right:0; bottom:0; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); border-top:1px solid var(--line); padding:12px 24px; display:none; }
+  .bar.on { display:block; }
+  .bar-inner { max-width:1100px; margin:0 auto; display:flex; gap:16px; align-items:center; }
+  .now { font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; flex:0 1 260px; }
+  audio { flex:1; min-width:0; height:40px; }
+  @media (max-width:820px) {
+    main { grid-template-columns:1fr; gap:32px; padding-top:24px; }
+    .cover { position:static; max-width:420px; margin:0 auto; }
+    .bar-inner { flex-direction:column; align-items:stretch; gap:6px; }
+    .now { flex:none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="cover"><img src="cover.jpg" alt="Kevin Kierstein live at The Bank Street Cafe" width="1200" height="1600"></div>
+  <section>
+    <h1>Kevin Kierstein</h1>
+    <p class="sub">LIVE at The Bank Street Cafe &middot; February 8, 1991</p>
+    <div class="album">
+      <button class="btn" id="playAll">&#9654;&nbsp; Play Entire Album <span style="opacity:.7;font-weight:500">&nbsp;59:26</span></button>
+      <a class="btn ghost" href="audio/00-full-album.mp3" download>Download album</a>
+    </div>
+    <ol id="tracks">
+      <li class="track" data-src="audio/01-instrumental.mp3">
+        <button class="play" aria-label="Play Instrumental"><span class="num">1</span></button>
+        <div class="meta"><span class="name">Instrumental</span><span class="by">Kierstein</span></div>
+        <span class="time">1:24</span>
+        <a class="dl" href="audio/01-instrumental.mp3" download aria-label="Download Instrumental">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/02-sweet-little-angel.mp3">
+        <button class="play" aria-label="Play Sweet Little Angel"><span class="num">2</span></button>
+        <div class="meta"><span class="name">Sweet Little Angel</span><span class="by">B.B. King</span></div>
+        <span class="time">4:07</span>
+        <a class="dl" href="audio/02-sweet-little-angel.mp3" download aria-label="Download Sweet Little Angel">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/03-13-hope-street.mp3">
+        <button class="play" aria-label="Play 13 Hope Street"><span class="num">3</span></button>
+        <div class="meta"><span class="name">13 Hope Street</span><span class="by">Kierstein</span></div>
+        <span class="time">2:24</span>
+        <a class="dl" href="audio/03-13-hope-street.mp3" download aria-label="Download 13 Hope Street">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/04-you-aint-gonna-walk-all-over-me.mp3">
+        <button class="play" aria-label="Play You Aint Gonna Walk All Over Me"><span class="num">4</span></button>
+        <div class="meta"><span class="name">You Aint Gonna Walk All Over Me</span><span class="by">Kierstein</span></div>
+        <span class="time">3:09</span>
+        <a class="dl" href="audio/04-you-aint-gonna-walk-all-over-me.mp3" download aria-label="Download You Aint Gonna Walk All Over Me">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/05-hard-times.mp3">
+        <button class="play" aria-label="Play Hard Times"><span class="num">5</span></button>
+        <div class="meta"><span class="name">Hard Times</span><span class="by">Ray Charles</span></div>
+        <span class="time">4:00</span>
+        <a class="dl" href="audio/05-hard-times.mp3" download aria-label="Download Hard Times">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/06-new-orleans-blues.mp3">
+        <button class="play" aria-label="Play New Orleans Blues"><span class="num">6</span></button>
+        <div class="meta"><span class="name">New Orleans Blues</span><span class="by">Kierstein</span></div>
+        <span class="time">4:08</span>
+        <a class="dl" href="audio/06-new-orleans-blues.mp3" download aria-label="Download New Orleans Blues">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/07-check-out-the-zydeco.mp3">
+        <button class="play" aria-label="Play Check Out the Zydeco"><span class="num">7</span></button>
+        <div class="meta"><span class="name">Check Out the Zydeco</span><span class="by">CJ Chenier</span></div>
+        <span class="time">3:14</span>
+        <a class="dl" href="audio/07-check-out-the-zydeco.mp3" download aria-label="Download Check Out the Zydeco">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/08-what-s-wrong-with-me.mp3">
+        <button class="play" aria-label="Play What&#x27;s Wrong with Me"><span class="num">8</span></button>
+        <div class="meta"><span class="name">What&#x27;s Wrong with Me</span><span class="by">Kierstein</span></div>
+        <span class="time">3:14</span>
+        <a class="dl" href="audio/08-what-s-wrong-with-me.mp3" download aria-label="Download What&#x27;s Wrong with Me">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/09-deep-down-in-florida.mp3">
+        <button class="play" aria-label="Play Deep Down in Florida"><span class="num">9</span></button>
+        <div class="meta"><span class="name">Deep Down in Florida</span><span class="by">Muddy Waters</span></div>
+        <span class="time">3:31</span>
+        <a class="dl" href="audio/09-deep-down-in-florida.mp3" download aria-label="Download Deep Down in Florida">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/10-deep-down-in-florida-con-t.mp3">
+        <button class="play" aria-label="Play Deep Down In Florida (con&#x27;t)"><span class="num">10</span></button>
+        <div class="meta"><span class="name">Deep Down In Florida (con&#x27;t)</span><span class="by">Muddy Waters</span></div>
+        <span class="time">2:11</span>
+        <a class="dl" href="audio/10-deep-down-in-florida-con-t.mp3" download aria-label="Download Deep Down In Florida (con&#x27;t)">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/11-i-m-getting-sentimental-over-you.mp3">
+        <button class="play" aria-label="Play I&#x27;m Getting Sentimental Over You"><span class="num">11</span></button>
+        <div class="meta"><span class="name">I&#x27;m Getting Sentimental Over You</span><span class="by">Bassman</span></div>
+        <span class="time">2:56</span>
+        <a class="dl" href="audio/11-i-m-getting-sentimental-over-you.mp3" download aria-label="Download I&#x27;m Getting Sentimental Over You">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/12-what-ever-happened-to-us.mp3">
+        <button class="play" aria-label="Play What Ever Happened to Us"><span class="num">12</span></button>
+        <div class="meta"><span class="name">What Ever Happened to Us</span><span class="by">Kierstein</span></div>
+        <span class="time">4:36</span>
+        <a class="dl" href="audio/12-what-ever-happened-to-us.mp3" download aria-label="Download What Ever Happened to Us">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/13-f-jam.mp3">
+        <button class="play" aria-label="Play F-Jam"><span class="num">13</span></button>
+        <div class="meta"><span class="name">F-Jam</span><span class="by">Kierstein</span></div>
+        <span class="time">2:36</span>
+        <a class="dl" href="audio/13-f-jam.mp3" download aria-label="Download F-Jam">&#8595;</a>
+      </li>
+      <li class="track" data-src="audio/14-misc.mp3">
+        <button class="play" aria-label="Play Misc"><span class="num">14</span></button>
+        <div class="meta"><span class="name">Misc</span></div>
+        <span class="time">15:35</span>
+        <a class="dl" href="audio/14-misc.mp3" download aria-label="Download Misc">&#8595;</a>
+      </li>
+    </ol>
+  </section>
+</main>
+<div class="bar" id="bar"><div class="bar-inner"><span class="now" id="now"></span><audio id="player" controls preload="none"></audio></div></div>
+<script>
+  const player=document.getElementById('player'), bar=document.getElementById('bar'), now=document.getElementById('now');
+  const tracks=[...document.querySelectorAll('.track')];
+  const FULL="audio/00-full-album.mp3";
+  let cur=null;
+  function mark(el){ tracks.forEach(t=>t.classList.remove('active','paused')); if(el) el.classList.add('active'); }
+  function load(src,label,el){ cur=el; mark(el); player.src=src; now.textContent=label; bar.classList.add('on'); player.play(); }
+  tracks.forEach((el,i)=>el.addEventListener('click',e=>{
+    if(e.target.closest('.dl')) return;
+    if(cur===el){ player.paused?player.play():player.pause(); return; }
+    load(el.dataset.src, el.querySelector('.name').textContent, el);
+  }));
+  document.getElementById('playAll').addEventListener('click',()=>load(FULL,'Entire Album',null));
+  player.addEventListener('pause',()=>cur&&cur.classList.add('paused'));
+  player.addEventListener('play',()=>cur&&cur.classList.remove('paused'));
+  player.addEventListener('ended',()=>{ const i=tracks.indexOf(cur); if(i>-1&&i<tracks.length-1){ const n=tracks[i+1]; load(n.dataset.src,n.querySelector('.name').textContent,n); } });
+</script>
+</body>
+</html>
